@@ -1,0 +1,17 @@
+v 1.0
+d {bf:WAFFLE}: A Stata package for aggregate line plots while preserving data structure.
+d See {helpb trendline} after installation.
+d
+d
+d KW: Stata
+d KW: graphs
+d KW: trendline
+d
+d Distribution-Date: 20241119
+d
+d This  version: 19 Nov 2024
+d First version: 19 Nov 2024
+d License: MIT
+d
+f trendline.ado
+f trendline.sthlp

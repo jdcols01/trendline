@@ -48,19 +48,25 @@ All {it:graph_options} permitted for {help twoway line} are allowed with this co
 
 {title:Examples} 
 
-{p 4 8 2}{cmd:. sysuse auto, clear}
+Use data from the World Bank for a multi-level time series.
+{p 4 8 2}{cmd:. import delimited "https://raw.githubusercontent.com/jdcols01/trendline/refs/heads/main/world_gdp.csv", clear}
+{p 4 8 2}{cmd:. encode region, gen(regnum)}
 
-{p 4 8 2}{cmd:. sepscatter mpg weight, separate(foreign)}{p_end}
-{p 4 8 2}{cmd:. gen myforeign = substr("df", foreign + 1, 1)}{p_end}
-{p 4 8 2}{cmd:. sepscatter mpg weight, separate(foreign) mylabel(myforeign)}{p_end}
-{p 4 8 2}{cmd:. sepscatter mpg weight, separate(foreign) mynumeric(myforeign)}{p_end}
+Overall trend lines when no category specified.
+{p 4 8 2}{cmd:. trendline gdp_percap, time(year)}{p_end}
 
-{p 4 8 2}{cmd:. sepscatter mpg weight, separate(rep78) mylabel(rep78)}{p_end}
-{p 4 8 2}{cmd:. sepscatter mpg weight, separate(rep78) missing legend(ring(0) pos(1) col(1))}{p_end}
+Trend lines by category.
+{p 4 8 2}{cmd:. trendline gdp_percap, time(year) category(regnum)}{p_end}
 
-{p 4 8 2}{cmd:. webuse grunfeld, clear}{p_end}
-{p 4 8 2}{cmd:. sepscatter mvalue time, separate(company) recast(connect) ysc(log) yla(5000 2000 1000 500 200 100)  legend(pos(3) col(1))}{p_end}
-{p 4 8 2}{cmd:. sepscatter mvalue time, separate(company) recast(connect) ysc(log) yla(5000 2000 1000 500 200 100)  legend(pos(3) col(1))} 
+Changing the aggregate statistic.
+{p 4 8 2}{cmd:. trendline gdp_percap, time(year) category(regnum) statistic(median)}{p_end}
+
+Condition the trend lines based on select categories.
+{p 4 8 2}{cmd:. trendline gdp_percap if inlist(regnum,1,2), time(year) category(regnum)}{p_end}
+
+Use all other {help twoway line} options.
+{p 4 8 2}{cmd:. trendline gdp_percap if inlist(regnum,1,2), time(year) category(regnum) lpattern(dash)}{p_end}
+{p 4 8 2}{cmd:. trendline gdp_percap if inlist(regnum,1,2), time(year) category(regnum) lpattern(dash) scheme(s2color)}{p_end}
 
 
 {title:Author} 

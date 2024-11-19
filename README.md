@@ -4,7 +4,7 @@ Stata package for aggregate trendlines while preserving data structure
 # trendline v1.0
 (19 Nov 2024)
 
-This package provides the ability to draw waffles Stata. It is based on the [Waffle plots](https://medium.com/the-stata-guide/stata-graphs-waffle-plots-613808b51f73) guide on Medium.
+This package provides the ability to draw simple aggregate line plots while preserving the structure of the data.
 
 The package is still beta and is being constantly improved. It might still be missing checks and features. 
 

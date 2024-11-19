@@ -15,7 +15,7 @@ program define trendline
 	if "`category'" != "" {
 		local collapsecat ", by(`time' `category')"
 		local separatecmd "separate `varlist', by(`category') veryshortlabel"
-		local yvar "`r(varlist)'"
+		local yvar `"`r(varlist)'"'
 	} 
 	
 	else {

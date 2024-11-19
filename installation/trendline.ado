@@ -29,7 +29,7 @@ program define trendline
 			capture keep `if'
 			collapse (`statistic') `varlist' `collapsecat'
 			`separatecmd'
-			twoway line `r(varlist)' `time', `options'
+			twoway line `yvar' `time', `options'
 		restore
 	}
 end

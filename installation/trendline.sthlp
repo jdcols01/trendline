@@ -49,8 +49,8 @@ All {it:graph_options} permitted for {help twoway line} are allowed with this co
 {title:Examples} 
 
 Use data from the World Bank for a multi-level time series.
-{p 4 8 2}{cmd:. import delimited "https://raw.githubusercontent.com/jdcols01/trendline/refs/heads/main/world_gdp.csv", clear}
-{p 4 8 2}{cmd:. encode region, gen(regnum)}
+{p 4 8 2}{cmd:. import delimited "https://raw.githubusercontent.com/jdcols01/trendline/refs/heads/main/world_gdp.csv", clear}{p_end}
+{p 4 8 2}{cmd:. encode region, gen(regnum)}{p_end}
 
 Overall trend lines when no category specified.
 {p 4 8 2}{cmd:. trendline gdp_percap, time(year)}{p_end}

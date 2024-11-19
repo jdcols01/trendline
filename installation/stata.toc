@@ -1,1 +1,8 @@
-Stata TOC
+v 1.0
+d 'TRENDLINE': A Stata package for aggregate line plots while preserving data structure.
+d
+d Distribution-Date: 20241119
+d
+d Jared Colston
+d
+p trendline

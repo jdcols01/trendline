@@ -15,7 +15,6 @@ program define trendline
 	if "`category'" != "" {
 		local collapsecat ", by(`time' `category')"
 		local separatecmd "separate `varlist', by(`category') veryshortlabel"
-		local yvar `"`r(varlist)'"'
 	} 
 	
 	else {
@@ -29,6 +28,9 @@ program define trendline
 			capture keep `if'
 			collapse (`statistic') `varlist' `collapsecat'
 			`separatecmd'
+			if "`category'" != "" {
+				local yvar "`r(varlist)'"
+			} 				
 			twoway line `yvar' `time', `options'
 		restore
 	}

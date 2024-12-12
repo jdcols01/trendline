@@ -31,7 +31,7 @@ program define trendline
 			if "`category'" != "" {
 				local yvar "`r(varlist)'"
 			} 				
-			twoway line `yvar' `time', `options'
+			twoway line `yvar' `time', `options' || `addplot'
 		restore
 	}
 end
